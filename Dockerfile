@@ -33,6 +33,7 @@ COPY --from=downloader /tmp ./
 
 COPY entrypoint.sh .
 
+VOLUME /home/age
 EXPOSE 5000
 
 ENTRYPOINT ["bash", "entrypoint.sh"]

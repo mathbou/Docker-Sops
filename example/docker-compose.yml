@@ -1,0 +1,28 @@
+services:
+    bash-with-sops: # An extended bash container
+        build:
+            context: extended-bash
+        container_name: sops-example-bash
+        depends_on:
+            - sops
+        networks:
+            - internal
+        volumes:
+            - "./sops.env:/sops.env:ro"  # The encrypted dotenv file is mounted into the image workdir
+        command: -c "env | grep '^EXAMPLE_'"  # Example command to show deciphered variables
+        
+    sops:
+        image: registry.gitlab.com/mathbou/docker-sops:latest
+        container_name: sops-example-sops
+        volumes:
+            - "sops-data:/home/age" # The location of the age private key, it must be a persistant volume.
+        networks:
+            - internal  # Share the same network as the container that need SOPS. SOPS will communicate through it.
+
+networks:
+    internal:
+        name: sops-example-internal
+
+volumes:
+    sops-data:
+        name: sops-example-sops-data
