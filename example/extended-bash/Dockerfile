@@ -2,7 +2,7 @@
 
 FROM alpine/curl:latest as downloader
 
-ARG SOPS_V="3.7.3"
+ARG SOPS_V="3.9.4"
 ARG PLATFORM="amd64"
 
 WORKDIR /tmp

@@ -2,8 +2,8 @@
 
 FROM alpine:latest as downloader
 
-ARG SOPS_V="3.7.3"
-ARG AGE_V="1.1.1"
+ARG SOPS_V="3.9.4"
+ARG AGE_V="1.2.1"
 ARG PLATFORM="amd64"
 
 WORKDIR /tmp
