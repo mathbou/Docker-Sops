@@ -1,5 +1,9 @@
 # Docker-Sops
 
+![badge](https://shieldcn.dev/badge/Crafted%20by%20humans-green.svg?mode=light&logo=ri%3AFaHeart&logoColor=ffffff&labelTextColor=ffffff)
+
+[![](https://badgen.net/badge/license/GPL%203.0%20or%20later/red)](https://choosealicense.com/licenses/gpl-3.0/)
+
 Ready-to-use Docker image that combine secret management tool **[SOPS
 ](https://github.com/getsops/sops)** and encryption tool **[age
 ](https://github.com/FiloSottile/age).**
